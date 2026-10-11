@@ -1,0 +1,211 @@
+# Ground truth escrito antes de ejecutar sca-gate sobre este repositorio.
+repo: holdout-pypi-boundary
+ecosistema: PyPI
+conjunto: reserva (hold-out), no usado para disenar sca-gate
+fecha_ground_truth: '2026-10-07'
+fuentes:
+- github/advisory-database (github-reviewed)
+- pypa/advisory-database
+paquetes_resueltos:
+- paquete: pyjwt
+  version: 2.4.0
+  relacion: directa
+- paquete: sqlparse
+  version: 0.4.3
+  relacion: directa
+diseno:
+  objetivos:
+  - paquete: sqlparse
+    id: CVE-2023-30608
+    dimension: borde, lado vulnerable (0.4.3, corregido en 0.4.4)
+  retiradas:
+  - paquete: sqlparse
+    id: GHSA-62qf-jcq8-8gxw
+    motivo: aviso retirado por duplicado de GHSA-2m57-hf25-phgg
+  lado_corregido:
+  - paquete: pyjwt
+    version: 2.4.0
+    ids:
+    - CVE-2022-29217
+    - GHSA-ffqj-6fqr-9h24
+    - PYSEC-2022-202
+    dimension: borde, lado corregido (primera version sin CVE-2022-29217)
+presentes:
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-32597
+  - GHSA-752w-5fwx-jx9f
+  - PYSEC-2026-120
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-101917
+  - GHSA-2gx3-rcp4-g85q
+  - PYSEC-2026-4140
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-102271
+  - GHSA-p4g4-x82p-q773
+  - PYSEC-2026-4149
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-102270
+  - GHSA-jwrc-g2q2-pq5p
+  - PYSEC-2026-4148
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-48524
+  - GHSA-fhv5-28vv-h8m8
+  - PYSEC-2026-177
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2025-45768
+  - PYSEC-2025-183
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-102269
+  - GHSA-hxm8-2xgr-2p9m
+  - PYSEC-2026-4147
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-102267
+  - GHSA-9v7f-9g4p-ffgj
+  - PYSEC-2026-4144
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-102275
+  - GHSA-x33g-cr3x-6449
+  - PYSEC-2026-4183
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-102268
+  - GHSA-ffc3-869f-jxw9
+  - PYSEC-2026-4145
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-48526
+  - GHSA-xgmm-8j9v-c9wx
+  - PYSEC-2026-179
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-101918
+  - GHSA-42vr-xj54-vc7v
+  - PYSEC-2026-4141
+  tipo: adicional
+  relacion: directa
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2026-48522
+  - GHSA-993g-76c3-p5m4
+  - PYSEC-2026-175
+  tipo: adicional
+  relacion: directa
+- paquete: sqlparse
+  version: 0.4.3
+  ids:
+  - GHSA-27jp-wm6q-gp25
+  tipo: adicional
+  relacion: directa
+- paquete: sqlparse
+  version: 0.4.3
+  ids:
+  - CVE-2023-30608
+  - GHSA-rrm6-wvj7-cwh2
+  - PYSEC-2023-87
+  tipo: objetivo
+  relacion: directa
+- paquete: sqlparse
+  version: 0.4.3
+  ids:
+  - CVE-2026-71491
+  - GHSA-f2ff-p2ww-7p4p
+  - PYSEC-2026-3697
+  tipo: adicional
+  relacion: directa
+- paquete: sqlparse
+  version: 0.4.3
+  ids:
+  - CVE-2024-4340
+  - GHSA-2m57-hf25-phgg
+  - PYSEC-2026-1940
+  tipo: adicional
+  relacion: directa
+- paquete: sqlparse
+  version: 0.4.3
+  ids:
+  - CVE-2026-84305
+  - GHSA-cfqr-cjx5-5jcm
+  - PYSEC-2026-3923
+  tipo: adicional
+  relacion: directa
+- paquete: sqlparse
+  version: 0.4.3
+  ids:
+  - CVE-2026-54284
+  - GHSA-pwgv-4x5q-6m9f
+  - PYSEC-2026-3699
+  tipo: adicional
+  relacion: directa
+- paquete: sqlparse
+  version: 0.4.3
+  ids:
+  - CVE-2026-59893
+  - GHSA-prg7-hcfm-mfcr
+  - PYSEC-2026-3698
+  tipo: adicional
+  relacion: directa
+- paquete: sqlparse
+  version: 0.4.3
+  ids:
+  - CVE-2026-59894
+  - GHSA-3496-9g83-7v6x
+  - PYSEC-2026-3696
+  tipo: adicional
+  relacion: directa
+ausentes:
+- paquete: sqlparse
+  version: 0.4.3
+  ids:
+  - GHSA-62qf-jcq8-8gxw
+  motivo: advisory retirada
+- paquete: pyjwt
+  version: 2.4.0
+  ids:
+  - CVE-2022-29217
+  - GHSA-ffqj-6fqr-9h24
+  - PYSEC-2022-202
+  motivo: lado corregido del borde

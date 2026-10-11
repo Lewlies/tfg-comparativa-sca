@@ -1,0 +1,83 @@
+repo: synthetic-npm-mixed
+ecosistema: npm
+dimensiones:
+- directa
+- transitiva
+- disputada_retirada
+hallazgos_esperados:
+- id_finding: mixed-npm-01-directa
+  dimension: directa
+  paquete: minimist
+  version: 1.2.2
+  ruta_en_arbol: minimist (raiz)
+  id_vuln_canonico: CVE-2020-7598
+  aliases:
+  - GHSA-vh95-rmgr-6w4m
+  rango_afectado_rama: rama 1.x, >=1.0.0 <1.2.3
+  resultado_esperado: DETECTAR
+  hallazgo_objetivo: true
+  hallazgos_adicionales_reales_no_disenados:
+  - id_vuln_canonico: CVE-2021-44906
+    aliases:
+    - GHSA-xvch-5gv4-984h
+- id_finding: mixed-npm-02-transitiva
+  dimension: transitiva
+  paquete: minimist
+  version: 0.0.8
+  ruta_en_arbol: mkdirp@0.5.1 > minimist
+  id_vuln_canonico: CVE-2020-7598
+  aliases:
+  - GHSA-vh95-rmgr-6w4m
+  rango_afectado_rama: rama 0.x, <0.2.1
+  resultado_esperado: DETECTAR
+  hallazgo_objetivo: true
+  hallazgos_adicionales_reales_no_disenados:
+  - id_vuln_canonico: CVE-2021-44906
+    aliases:
+    - GHSA-xvch-5gv4-984h
+- id_finding: mixed-npm-03-disputada
+  dimension: disputada_retirada
+  paquete: axios
+  version: 1.16.0
+  ruta_en_arbol: axios (raiz)
+  id_vuln_canonico: GHSA-xj6q-8x83-jv6g
+  aliases:
+  - CVE-2026-67314
+  advisory_retirada: GHSA-38gx-cfqf-f652
+  motivo_retirada: 'Duplicado de GHSA-xj6q-8x83-jv6g. Publicada 2026-07-06, retirada 2026-08-07 (6 dias
+    despues).
+
+    '
+  rango_afectado: '>=1.15.2, <1.18.0'
+  resultado_esperado: DETECTAR_VIA_CANONICA
+  hallazgo_objetivo: true
+  hallazgos_adicionales_reales_no_disenados:
+  - id_vuln_canonico: (sin CVE)
+    aliases:
+    - GHSA-hcpx-6fm6-wx23
+  - id_vuln_canonico: (sin CVE)
+    aliases:
+    - GHSA-mmx7-hfxf-jppx
+  - id_vuln_canonico: (sin CVE)
+    aliases:
+    - GHSA-pmv8-rq9r-6j72
+  - id_vuln_canonico: (sin CVE)
+    aliases:
+    - GHSA-mwf2-3pr3-8698
+  - id_vuln_canonico: (sin CVE)
+    aliases:
+    - GHSA-gcfj-64vw-6mp9
+  - id_vuln_canonico: (sin CVE)
+    aliases:
+    - GHSA-7q8q-rj6j-mhjq
+  - id_vuln_canonico: (sin CVE)
+    aliases:
+    - GHSA-jqh4-m9w3-8hp9
+  - id_vuln_canonico: (sin CVE)
+    aliases:
+    - GHSA-f4gw-2p7v-4548
+  - id_vuln_canonico: (sin CVE)
+    aliases:
+    - GHSA-42h9-826w-cgv3
+fecha_verificacion: '2026-09-02'
+fuente_verificacion: npm audit y OSV

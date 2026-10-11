@@ -1,0 +1,88 @@
+# Ground truth escrito antes de ejecutar sca-gate sobre este repositorio.
+repo: holdout-maven-mixed
+ecosistema: Maven
+conjunto: reserva (hold-out), no usado para disenar sca-gate
+fecha_ground_truth: '2026-10-07'
+fuentes:
+- github/advisory-database (github-reviewed)
+- pypa/advisory-database
+paquetes_resueltos:
+- paquete: com.google.protobuf:protobuf-java
+  version: 3.14.0
+  relacion: directa
+- paquete: org.apache.commons:commons-lang3
+  version: '3.11'
+  relacion: transitiva
+- paquete: org.apache.commons:commons-text
+  version: '1.9'
+  relacion: directa
+diseno:
+  objetivos:
+  - paquete: org.apache.commons:commons-text
+    id: CVE-2022-42889
+    dimension: directa
+  - paquete: org.apache.commons:commons-lang3
+    id: CVE-2025-48924
+    dimension: transitiva (commons-text 1.9 depende de commons-lang3 3.11)
+  retiradas:
+  - paquete: com.google.protobuf:protobuf-java
+    id: GHSA-77rm-9x9h-xj3g
+    motivo: aviso retirado, CVE-2021-22570 no afecta a protobuf-java
+  lado_corregido: []
+presentes:
+- paquete: com.google.protobuf:protobuf-java
+  version: 3.14.0
+  ids:
+  - CVE-2024-7254
+  - GHSA-735f-pc8j-v9w8
+  tipo: adicional
+  relacion: directa
+- paquete: com.google.protobuf:protobuf-java
+  version: 3.14.0
+  ids:
+  - CVE-2022-3171
+  - GHSA-h4h5-3hr4-j3g2
+  tipo: adicional
+  relacion: directa
+- paquete: com.google.protobuf:protobuf-java
+  version: 3.14.0
+  ids:
+  - CVE-2022-3509
+  - GHSA-g5ww-5jh7-63cx
+  tipo: adicional
+  relacion: directa
+- paquete: com.google.protobuf:protobuf-java
+  version: 3.14.0
+  ids:
+  - CVE-2022-3510
+  - GHSA-4gg5-vx3j-xwc7
+  tipo: adicional
+  relacion: directa
+- paquete: com.google.protobuf:protobuf-java
+  version: 3.14.0
+  ids:
+  - CVE-2021-22569
+  - GHSA-wrvw-hg22-4m67
+  tipo: adicional
+  relacion: directa
+- paquete: org.apache.commons:commons-lang3
+  version: '3.11'
+  ids:
+  - CVE-2025-48924
+  - GHSA-j288-q9x7-2f5v
+  tipo: objetivo
+  relacion: transitiva
+- paquete: org.apache.commons:commons-text
+  version: '1.9'
+  ids:
+  - CVE-2022-42889
+  - GHSA-599f-7c49-w659
+  tipo: objetivo
+  relacion: directa
+ausentes:
+- paquete: com.google.protobuf:protobuf-java
+  version: 3.14.0
+  ids:
+  - CVE-2021-22570
+  - GHSA-77rm-9x9h-xj3g
+  motivo: advisory retirada

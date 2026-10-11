@@ -1,0 +1,16 @@
+repo,ecosistema,herramienta,hallazgo,id_retirado,ids_canonicos,veredicto
+synthetic-npm-mixed,npm,dependabot,mixed-npm-03-disputada,GHSA-38GX-CFQF-F652,CVE-2026-67314|GHSA-XJ6Q-8X83-JV6G,SOLO_CANONICO_correcto
+synthetic-npm-mixed,npm,dependency-check,mixed-npm-03-disputada,GHSA-38GX-CFQF-F652,CVE-2026-67314|GHSA-XJ6Q-8X83-JV6G,SOLO_CANONICO_correcto
+synthetic-npm-mixed,npm,grype,mixed-npm-03-disputada,GHSA-38GX-CFQF-F652,CVE-2026-67314|GHSA-XJ6Q-8X83-JV6G,SOLO_CANONICO_correcto
+synthetic-npm-mixed,npm,osv-scanner,mixed-npm-03-disputada,GHSA-38GX-CFQF-F652,CVE-2026-67314|GHSA-XJ6Q-8X83-JV6G,SOLO_CANONICO_correcto
+synthetic-npm-mixed,npm,trivy,mixed-npm-03-disputada,GHSA-38GX-CFQF-F652,CVE-2026-67314|GHSA-XJ6Q-8X83-JV6G,SOLO_CANONICO_correcto
+synthetic-pypi-mixed,pypi,dependabot,mixed-pypi-04-disputada,GHSA-XQRQ-4MGF-FF32,(sin canonico de reemplazo),NO_REPORTA_NINGUNO
+synthetic-pypi-mixed,pypi,dependency-check,mixed-pypi-04-disputada,GHSA-XQRQ-4MGF-FF32,(sin canonico de reemplazo),NO_REPORTA_NINGUNO
+synthetic-pypi-mixed,pypi,grype,mixed-pypi-04-disputada,GHSA-XQRQ-4MGF-FF32,(sin canonico de reemplazo),NO_REPORTA_NINGUNO
+synthetic-pypi-mixed,pypi,osv-scanner,mixed-pypi-04-disputada,GHSA-XQRQ-4MGF-FF32,(sin canonico de reemplazo),NO_REPORTA_NINGUNO
+synthetic-pypi-mixed,pypi,trivy,mixed-pypi-04-disputada,GHSA-XQRQ-4MGF-FF32,(sin canonico de reemplazo),NO_REPORTA_NINGUNO
+synthetic-maven-mixed,maven,dependabot,mixed-maven-04-disputada,GHSA-JRMH-V64J-MJM9,CVE-2023-0482|GHSA-2C6G-PFX3-W7H8,SOLO_CANONICO_correcto
+synthetic-maven-mixed,maven,dependency-check,mixed-maven-04-disputada,GHSA-JRMH-V64J-MJM9,CVE-2023-0482|GHSA-2C6G-PFX3-W7H8,NO_REPORTA_NINGUNO
+synthetic-maven-mixed,maven,grype,mixed-maven-04-disputada,GHSA-JRMH-V64J-MJM9,CVE-2023-0482|GHSA-2C6G-PFX3-W7H8,SOLO_CANONICO_correcto
+synthetic-maven-mixed,maven,osv-scanner,mixed-maven-04-disputada,GHSA-JRMH-V64J-MJM9,CVE-2023-0482|GHSA-2C6G-PFX3-W7H8,SOLO_CANONICO_correcto
+synthetic-maven-mixed,maven,trivy,mixed-maven-04-disputada,GHSA-JRMH-V64J-MJM9,CVE-2023-0482|GHSA-2C6G-PFX3-W7H8,SOLO_CANONICO_correcto

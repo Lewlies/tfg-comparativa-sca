@@ -1,0 +1,11 @@
+{
+  "name": "synthetic-npm-mixed",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Caso sintetico TFG: dependencia directa vulnerable + dependencia transitiva vulnerable + advisory disputada/retirada (npm).",
+  "dependencies": {
+    "minimist": "1.2.2",
+    "mkdirp": "0.5.1",
+    "axios": "1.16.0"
+  }
+}

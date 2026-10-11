@@ -1,0 +1,14 @@
+repo: synthetic-maven-boundary-patched
+ecosistema: Maven
+dimensiones:
+- borde_de_rango
+par_con: synthetic-maven-boundary-vulnerable
+hallazgos_esperados: []
+paquete_bajo_prueba:
+  paquete: org.yaml:snakeyaml
+  version: '2.0'
+  id_vuln_referencia: CVE-2022-1471
+  rango_afectado: <2.0
+resultado_esperado_global: CERO_HALLAZGOS_PARA_SNAKEYAML
+fecha_verificacion: '2026-09-02'
+fuente_verificacion: mvn dependency:tree y OSV

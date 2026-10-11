@@ -1,0 +1,10 @@
+{
+  "name": "holdout-npm-boundary",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Repositorio sintetico de reserva (hold-out) del TFG. No contiene codigo.",
+  "dependencies": {
+    "semver": "7.5.2",
+    "ws": "7.4.5"
+  }
+}

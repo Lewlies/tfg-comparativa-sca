@@ -1,0 +1,41 @@
+repo: synthetic-pypi-boundary-patched
+ecosistema: PyPI
+dimensiones:
+- borde_de_rango
+par_con: synthetic-pypi-boundary-vulnerable
+hallazgos_esperados: []
+paquete_bajo_prueba:
+  paquete: urllib3
+  version: 1.26.5
+  id_vuln_referencia: CVE-2021-33503
+  rango_afectado: '>=1.25.4, <1.26.5'
+resultado_esperado_global: CERO_HALLAZGOS_PARA_CVE-2021-33503
+hallazgos_compartidos_con_el_par_vulnerable:
+- id_vuln_canonico: CVE-2023-43804
+  aliases:
+  - GHSA-v845-jxx5-vc9f
+  - PYSEC-2023-192
+- id_vuln_canonico: CVE-2023-45803
+  aliases:
+  - GHSA-g4mx-q9vg-27p4
+  - PYSEC-2023-212
+- id_vuln_canonico: CVE-2024-37891
+  aliases:
+  - GHSA-34jh-p97f-mpxf
+- id_vuln_canonico: CVE-2025-50181
+  aliases:
+  - GHSA-pq67-6m6q-mj2v
+- id_vuln_canonico: CVE-2025-66418
+  aliases:
+  - GHSA-gm62-xv2j-4w53
+- id_vuln_canonico: CVE-2025-66471
+  aliases:
+  - GHSA-2xpw-w6gg-jr37
+- id_vuln_canonico: CVE-2026-21441
+  aliases:
+  - GHSA-38jv-5279-wg99
+- id_vuln_canonico: CVE-2026-44431
+  aliases:
+  - GHSA-qccp-gfcp-xxvc
+fecha_verificacion: '2026-09-02'
+fuente_verificacion: pip-audit -r requirements.txt y OSV

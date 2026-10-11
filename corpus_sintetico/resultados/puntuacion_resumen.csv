@@ -1,0 +1,16 @@
+herramienta,ecosistema,TP,FN,FP_CONFIRMADO,CANDIDATO_FP,NO_PUNTUA,RETIRADA,recall,precision_estricta
+dependabot,maven,3,1,0,6,0,0,0.75,1.0
+dependabot,npm,4,0,0,1,23,0,1.0,1.0
+dependabot,pypi,3,0,0,2,42,0,1.0,1.0
+dependency-check,maven,0,4,0,0,0,0,0.0,
+dependency-check,npm,3,1,0,0,22,0,0.75,1.0
+dependency-check,pypi,1,2,0,0,2,0,0.333,1.0
+grype,maven,3,1,0,6,0,0,0.75,1.0
+grype,npm,4,0,0,0,23,0,1.0,1.0
+grype,pypi,3,0,0,2,42,0,1.0,1.0
+osv-scanner,maven,3,1,0,6,0,0,0.75,1.0
+osv-scanner,npm,4,0,0,0,23,0,1.0,1.0
+osv-scanner,pypi,3,0,0,7,84,0,1.0,1.0
+trivy,maven,4,0,0,11,6,0,1.0,1.0
+trivy,npm,4,0,0,0,23,0,1.0,1.0
+trivy,pypi,2,1,0,0,18,0,0.667,1.0

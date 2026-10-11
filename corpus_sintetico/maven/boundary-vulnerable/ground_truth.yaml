@@ -1,0 +1,17 @@
+repo: synthetic-maven-boundary-vulnerable
+ecosistema: Maven
+dimensiones:
+- borde_de_rango
+par_con: synthetic-maven-boundary-patched
+hallazgos_esperados:
+- id_finding: boundary-maven-vuln-01
+  dimension: borde_de_rango
+  paquete: org.yaml:snakeyaml
+  version: '1.33'
+  id_vuln_canonico: CVE-2022-1471
+  aliases:
+  - GHSA-mjmj-j48q-9wg2
+  rango_afectado: <2.0
+  resultado_esperado: DETECTAR
+fecha_verificacion: '2026-09-02'
+fuente_verificacion: mvn dependency:tree y OSV

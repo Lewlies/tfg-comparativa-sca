@@ -1,0 +1,108 @@
+repo: synthetic-maven-mixed
+ecosistema: Maven
+dimensiones:
+- directa
+- transitiva
+- disputada_retirada
+arbol_resuelto_real:
+- synthetic-maven-mixed:jar:1.0.0
+- +- log4j-core:2.14.1:compile
+- '|  \- log4j-api:2.14.1:compile'
+- +- jackson-dataformat-yaml:2.9.7:compile
+- '|  +- snakeyaml:1.23:compile'
+- '|  \- jackson-core:2.9.7:compile'
+- \- resteasy-core:4.7.7.Final:compile
+- '   +- jboss-logging:3.4.2.Final:compile'
+- '   +- jboss-annotations-api_1.3_spec:2.0.1.Final:compile'
+- '   +- jboss-jaxrs-api_2.1_spec:2.0.1.Final:compile'
+- '   +- jboss-jaxb-api_2.3_spec:2.0.0.Final:compile'
+- '   +- resteasy-core-spi:4.7.7.Final:compile'
+- '   +- reactive-streams:1.0.3:compile'
+- '   +- jakarta.activation-api:1.2.1:compile'
+- '   +- jakarta.validation-api:2.0.2:compile'
+- '   +- asyncutil:0.1.0:compile'
+- '   \- smallrye-config:2.3.0:compile'
+- '      +- smallrye-config-core:2.3.0:compile'
+- '      |  +- microprofile-config-api:2.0:compile'
+- '      |  +- smallrye-common-annotation:1.6.0:compile'
+- '      |  +- smallrye-common-expression:1.6.0:compile'
+- '      |  +- smallrye-common-constraint:1.6.0:compile'
+- '      |  +- smallrye-common-classloader:1.6.0:compile'
+- '      |  +- org.ow2.asm:asm:9.1:compile'
+- '      |  \- smallrye-config-common:2.3.0:compile'
+hallazgos_esperados:
+- id_finding: mixed-maven-01-directa
+  dimension: directa
+  paquete: org.apache.logging.log4j:log4j-core
+  version: 2.14.1
+  ruta_en_arbol: log4j-core (raiz)
+  id_vuln_canonico: CVE-2021-44228
+  aliases:
+  - GHSA-jfh8-c2jp-5v3q
+  rango_afectado: 2.0-beta9 - 2.15.0 (excluye 2.12.2, 2.12.3, 2.3.1)
+  resultado_esperado: DETECTAR
+- id_finding: mixed-maven-02-transitiva
+  dimension: transitiva
+  paquete: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml
+  version: 2.9.7
+  ruta_en_arbol: jackson-dataformat-yaml (raiz, declarado por nosotros)
+  resultado_esperado: SIN_CVE_PROPIO_CONOCIDO
+- id_finding: mixed-maven-03-transitiva
+  dimension: transitiva
+  paquete: org.yaml:snakeyaml
+  version: '1.23'
+  ruta_en_arbol: jackson-dataformat-yaml@2.9.7 > snakeyaml (NO declarado por nosotros)
+  id_vuln_canonico: CVE-2017-18640
+  aliases:
+  - GHSA-rvwf-54qp-4r6v
+  rango_afectado: <1.26
+  resultado_esperado: DETECTAR
+  hallazgo_objetivo: true
+  hallazgos_adicionales_reales_no_disenados:
+  - id_vuln_canonico: CVE-2022-1471
+    aliases:
+    - GHSA-mjmj-j48q-9wg2
+  - id_vuln_canonico: CVE-2022-25857
+    aliases:
+    - GHSA-3mc7-4q67-w48m
+  - id_vuln_canonico: CVE-2022-38750
+    aliases:
+    - GHSA-hhhw-99gj-p3c3
+  - id_vuln_canonico: CVE-2022-38751
+    aliases:
+    - GHSA-98wm-3w3q-mw94
+  - id_vuln_canonico: CVE-2022-38752
+    aliases:
+    - GHSA-9w3m-gqgf-c4p9
+  - id_vuln_canonico: CVE-2022-41854
+    aliases:
+    - GHSA-w37g-rhq8-7m4j
+- id_finding: mixed-maven-04-disputada
+  dimension: disputada_retirada
+  paquete: org.jboss.resteasy:resteasy-core
+  version: 4.7.7.Final
+  ruta_en_arbol: resteasy-core (raiz)
+  id_vuln_canonico: CVE-2023-0482
+  aliases_advisory_canonica:
+  - GHSA-2c6g-pfx3-w7h8
+  advisory_retirada: GHSA-jrmh-v64j-mjm9
+  motivo_retirada: 'GHSA-jrmh-v64j-mjm9 fue retirada el 2025-01-15 por ser DUPLICADO de GHSA-2c6g-pfx3-w7h8
+    (mismo patron que el caso axios de synthetic-npm-mixed: ambas describen el mismo hallazgo real --
+    uso inseguro de File.createTempFile() con permisos demasiado permisivos en DataSourceProvider/FileProvider/Mime4JWorkaround).
+
+    '
+  rango_afectado: '>=4.0.0.Beta1, <4.7.8.Final'
+  resultado_esperado: DETECTAR_VIA_CANONICA
+  subarbol_verificado: 'Confirmado con mvn dependency:tree real (ver arbol_resuelto_real arriba): resteasy-core
+    arrastra jboss-logging, tres specs Jakarta/JBoss (annotations, jaxrs, jaxb), resteasy-core-spi, reactive-streams,
+    jakarta.activation-api, jakarta.validation-api, asyncutil y smallrye-config (con su propio subarbol:
+    smallrye-common-*, microprofile-config-api, org.ow2.asm:asm, smallrye-config-common). Verificados
+    en OSV (2026-09-02) sin CVEs conocidos: jackson-core, org.ow2.asm:asm, smallrye-config/smallrye-config-core,
+    asyncutil, jboss-logging. El resto son jars de API/spec (interfaces sin logica ejecutable: los *-api_*_spec,
+    reactive-streams, jakarta.*-api, microprofile-config-api, smallrye-common-*) con riesgo de CVE practicamente
+    nulo por naturaleza; no se auditaron uno a uno. Si el primer escaneo de prueba reporta algo en ellos,
+    documentarlo aqui antes de usarlo para el analisis comparativo.
+
+    '
+fecha_verificacion: '2026-09-02'
+fuente_verificacion: mvn dependency:tree y OSV

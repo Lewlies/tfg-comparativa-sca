@@ -1,0 +1,36 @@
+repo: synthetic-npm-boundary-patched
+ecosistema: npm
+dimensiones:
+- borde_de_rango
+par_con: synthetic-npm-boundary-vulnerable
+hallazgos_esperados: []
+paquete_bajo_prueba:
+  paquete: lodash
+  version: 4.17.12
+  id_vuln_referencia: CVE-2019-10744
+  aliases:
+  - GHSA-jf85-cpcp-j695
+  - SNYK-JS-LODASH-450202
+  rango_afectado: <4.17.12
+resultado_esperado_global: CERO_HALLAZGOS_PARA_CVE-2019-10744
+hallazgos_compartidos_con_el_par_vulnerable:
+- id_vuln_canonico: CVE-2020-8203
+  aliases:
+  - GHSA-p6mc-m468-83gw
+- id_vuln_canonico: CVE-2021-23337
+  aliases:
+  - GHSA-35jh-r3h4-6jhm
+- id_vuln_canonico: CVE-2020-28500
+  aliases:
+  - GHSA-29mw-wpgm-hmr9
+- id_vuln_canonico: CVE-2026-4800
+  aliases:
+  - GHSA-r5fr-rjxr-66jc
+- id_vuln_canonico: CVE-2026-2950
+  aliases:
+  - GHSA-f23m-r3pf-42rh
+- id_vuln_canonico: CVE-2025-13465
+  aliases:
+  - GHSA-xxjr-mmjv-4gpg
+fecha_verificacion: '2026-09-02'
+fuente_verificacion: npm audit y OSV

@@ -1,0 +1,569 @@
+# Ground truth escrito antes de ejecutar sca-gate sobre este repositorio.
+repo: holdout-pypi-mixed
+ecosistema: PyPI
+conjunto: reserva (hold-out), no usado para disenar sca-gate
+fecha_ground_truth: '2026-10-07'
+fuentes:
+- github/advisory-database (github-reviewed)
+- pypa/advisory-database
+paquetes_resueltos:
+- paquete: aiohttp
+  version: 3.8.1
+  relacion: directa
+- paquete: aiosignal
+  version: 1.4.0
+  relacion: transitiva
+- paquete: async-timeout
+  version: 4.0.3
+  relacion: transitiva
+- paquete: attrs
+  version: 26.1.0
+  relacion: transitiva
+- paquete: certifi
+  version: 2026.7.22
+  relacion: transitiva
+- paquete: chardet
+  version: 4.0.0
+  relacion: transitiva
+- paquete: charset-normalizer
+  version: 2.1.1
+  relacion: transitiva
+- paquete: frozenlist
+  version: 1.8.0
+  relacion: transitiva
+- paquete: idna
+  version: '2.10'
+  relacion: transitiva
+- paquete: jinja2
+  version: 2.11.2
+  relacion: directa
+- paquete: markupsafe
+  version: 3.0.4
+  relacion: transitiva
+- paquete: multidict
+  version: 6.9.1
+  relacion: transitiva
+- paquete: propcache
+  version: 0.5.4
+  relacion: transitiva
+- paquete: requests
+  version: 2.25.1
+  relacion: directa
+- paquete: typing-extensions
+  version: 4.16.0
+  relacion: transitiva
+- paquete: urllib3
+  version: 1.26.20
+  relacion: transitiva
+- paquete: yarl
+  version: 1.25.1
+  relacion: transitiva
+diseno:
+  objetivos:
+  - paquete: jinja2
+    id: CVE-2020-28493
+    dimension: directa
+  - paquete: idna
+    id: CVE-2024-3651
+    dimension: transitiva (requests 2.25.1 fija idna<3)
+  retiradas:
+  - paquete: aiohttp
+    id: GHSA-rwqr-c348-m5wr
+    motivo: aviso retirado, CVE-2022-33124 no es una vulnerabilidad
+  lado_corregido: []
+presentes:
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - GHSA-pjjw-qhg8-p2p9
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-34993
+  - GHSA-jg22-mg44-37j8
+  - PYSEC-2026-2104
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-34519
+  - GHSA-mwh4-6h8g-pg8w
+  - PYSEC-2026-2101
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-34513
+  - GHSA-hcc4-c3v8-rx92
+  - PYSEC-2026-2095
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-69243
+  - GHSA-mfx4-hv73-q22v
+  - PYSEC-2026-3546
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2023-47627
+  - GHSA-gfw2-4jvh-wgfg
+  - PYSEC-2023-246
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2025-69226
+  - GHSA-54jq-c3m8-4m76
+  - PYSEC-2026-1097
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2024-23334
+  - GHSA-5h86-8mv2-jq9f
+  - PYSEC-2024-24
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2025-53643
+  - GHSA-9548-qrrj-x5pj
+  - PYSEC-2026-1104
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-54279
+  - GHSA-2fqr-mr3j-6wp8
+  - PYSEC-2026-2112
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-34514
+  - GHSA-2vrm-gr82-f7m5
+  - PYSEC-2026-2096
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-34518
+  - GHSA-966j-vmvw-g2g9
+  - PYSEC-2026-2100
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-54274
+  - GHSA-xcgm-r5h9-7989
+  - PYSEC-2026-2108
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2025-69227
+  - GHSA-jj3x-wxrx-4x23
+  - PYSEC-2026-1107
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-69244
+  - GHSA-cq5v-8q36-5273
+  - PYSEC-2026-3545
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2024-27306
+  - GHSA-7gpw-8wmc-pm8g
+  - PYSEC-2026-1102
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2024-30251
+  - GHSA-5m98-qgg9-wh84
+  - PYSEC-2026-1098
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2025-69225
+  - GHSA-mqqc-3gqh-h2x8
+  - PYSEC-2026-1109
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-59881
+  - GHSA-mq44-7p77-q5h7
+  - PYSEC-2026-3547
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-54276
+  - GHSA-hpj7-wq8m-9hgp
+  - PYSEC-2026-2109
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2025-69228
+  - GHSA-6jhg-hg63-jvvf
+  - PYSEC-2026-1100
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-54277
+  - GHSA-63hw-fmq6-xxg2
+  - PYSEC-2026-2110
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2025-69224
+  - GHSA-69f9-5gxw-wvc2
+  - PYSEC-2026-1099
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2023-49082
+  - GHSA-qvrw-v9rv-5rjx
+  - PYSEC-2023-251
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-54273
+  - GHSA-4fvr-rgm6-gqmc
+  - PYSEC-2026-2107
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-34520
+  - GHSA-63hf-3vf5-4wqf
+  - PYSEC-2026-2102
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-34516
+  - GHSA-m5qp-6w8w-w647
+  - PYSEC-2026-2098
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2023-49081
+  - GHSA-q3qx-c6g2-7pw2
+  - PYSEC-2023-250
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-34515
+  - GHSA-p998-jp59-783m
+  - PYSEC-2026-2097
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-34525
+  - GHSA-c427-h43c-vf67
+  - PYSEC-2026-2103
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-34517
+  - GHSA-3wq7-rqq7-wx6j
+  - PYSEC-2026-2099
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-47265
+  - GHSA-hg6j-4rv6-33pg
+  - PYSEC-2026-2105
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2025-69229
+  - GHSA-g84x-mcqj-x9qq
+  - PYSEC-2026-1106
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-54275
+  - GHSA-4m7w-qmgq-4wj5
+  - PYSEC-2026-237
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2025-69230
+  - GHSA-fh55-r93g-j68g
+  - PYSEC-2026-1105
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2024-23829
+  - GHSA-8qpw-xqxj-h4r2
+  - PYSEC-2024-26
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-54280
+  - GHSA-9x8q-7h8h-wcw9
+  - PYSEC-2026-2113
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-50269
+  - GHSA-m6qw-4cw2-hm4m
+  - PYSEC-2026-2106
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-22815
+  - GHSA-w2fm-2cpv-w7v5
+  - PYSEC-2026-2094
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2025-69223
+  - GHSA-6mq8-rvhq-8wgg
+  - PYSEC-2026-1101
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2023-37276
+  - GHSA-45c4-8wx5-qw6w
+  - PYSEC-2023-120
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2024-52304
+  - GHSA-8495-4g3g-x7pr
+  - PYSEC-2026-1103
+  tipo: adicional
+  relacion: directa
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2026-54278
+  - GHSA-g3cq-j2xw-wf74
+  - PYSEC-2026-2111
+  tipo: adicional
+  relacion: directa
+- paquete: idna
+  version: '2.10'
+  ids:
+  - CVE-2024-3651
+  - GHSA-jjg7-2v4v-x38h
+  - PYSEC-2024-60
+  tipo: objetivo
+  relacion: transitiva
+- paquete: idna
+  version: '2.10'
+  ids:
+  - CVE-2026-45409
+  - GHSA-65pc-fj4g-8rjx
+  - PYSEC-2026-215
+  tipo: adicional
+  relacion: transitiva
+- paquete: jinja2
+  version: 2.11.2
+  ids:
+  - CVE-2025-27516
+  - GHSA-cpwx-vrp4-4pq7
+  - PYSEC-2026-1471
+  tipo: adicional
+  relacion: directa
+- paquete: jinja2
+  version: 2.11.2
+  ids:
+  - CVE-2020-28493
+  - GHSA-g3rq-g295-4j3m
+  - PYSEC-2021-66
+  - SNYK-PYTHON-JINJA2-1012994
+  tipo: objetivo
+  relacion: directa
+- paquete: jinja2
+  version: 2.11.2
+  ids:
+  - CVE-2024-56326
+  - GHSA-q2x7-8rv6-6q7h
+  - PYSEC-2026-1475
+  tipo: adicional
+  relacion: directa
+- paquete: jinja2
+  version: 2.11.2
+  ids:
+  - CVE-2024-34064
+  - GHSA-h75v-3vvj-5mfj
+  - PYSEC-2026-1474
+  tipo: adicional
+  relacion: directa
+- paquete: jinja2
+  version: 2.11.2
+  ids:
+  - CVE-2024-22195
+  - GHSA-h5c8-rqwp-cp95
+  - PYSEC-2026-1473
+  tipo: adicional
+  relacion: directa
+- paquete: requests
+  version: 2.25.1
+  ids:
+  - CVE-2023-32681
+  - GHSA-j8r2-6x86-q33q
+  - PYSEC-2023-74
+  tipo: adicional
+  relacion: directa
+- paquete: requests
+  version: 2.25.1
+  ids:
+  - CVE-2024-35195
+  - GHSA-9wx4-h78v-vm56
+  - PYSEC-2026-1873
+  tipo: adicional
+  relacion: directa
+- paquete: requests
+  version: 2.25.1
+  ids:
+  - CVE-2026-25645
+  - GHSA-gc5v-m9x4-r6x2
+  - PYSEC-2026-2275
+  tipo: adicional
+  relacion: directa
+- paquete: requests
+  version: 2.25.1
+  ids:
+  - CVE-2024-47081
+  - GHSA-9hjg-9r4m-mvj7
+  - PYSEC-2026-1872
+  tipo: adicional
+  relacion: directa
+- paquete: urllib3
+  version: 1.26.20
+  ids:
+  - CVE-2026-97687
+  - GHSA-8988-9cw3-xx77
+  - PYSEC-2026-4175
+  tipo: adicional
+  relacion: transitiva
+- paquete: urllib3
+  version: 1.26.20
+  ids:
+  - CVE-2026-21441
+  - GHSA-38jv-5279-wg99
+  - PYSEC-2026-1996
+  tipo: adicional
+  relacion: transitiva
+- paquete: urllib3
+  version: 1.26.20
+  ids:
+  - CVE-2025-66418
+  - GHSA-gm62-xv2j-4w53
+  - PYSEC-2026-1998
+  tipo: adicional
+  relacion: transitiva
+- paquete: urllib3
+  version: 1.26.20
+  ids:
+  - CVE-2026-44431
+  - GHSA-qccp-gfcp-xxvc
+  - PYSEC-2026-141
+  tipo: adicional
+  relacion: transitiva
+- paquete: urllib3
+  version: 1.26.20
+  ids:
+  - CVE-2025-50181
+  - GHSA-pq67-6m6q-mj2v
+  - PYSEC-2026-1999
+  tipo: adicional
+  relacion: transitiva
+- paquete: urllib3
+  version: 1.26.20
+  ids:
+  - CVE-2026-97689
+  - GHSA-vxq7-64xx-v4gw
+  - PYSEC-2026-4177
+  tipo: adicional
+  relacion: transitiva
+- paquete: urllib3
+  version: 1.26.20
+  ids:
+  - CVE-2025-66471
+  - GHSA-2xpw-w6gg-jr37
+  - PYSEC-2026-1994
+  tipo: adicional
+  relacion: transitiva
+ausentes:
+- paquete: aiohttp
+  version: 3.8.1
+  ids:
+  - CVE-2022-33124
+  - GHSA-rwqr-c348-m5wr
+  - PYSEC-2022-43059
+  motivo: advisory retirada

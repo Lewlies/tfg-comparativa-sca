@@ -1,0 +1,7 @@
+repo,callables_en_fuente,llamadas_desde_fuente,llamadas_a_biblioteca,tipos_externos_distintos,tipos_del_mapa_resueltos,veredicto_bd
+"log4j-unreachable",4,6,5,3,0,0,"APTA"
+"log4j-reachable",11,14,6,3,1,0,"APTA"
+"log4j-deadcode",5,5,5,4,1,0,"APTA"
+"snakeyaml-dump-only",2,7,7,5,1,0,"APTA"
+"snakeyaml-load",2,4,4,3,1,0,"APTA"
+"nobuild-log4j-reachable",11,14,6,1,1,1,"NO-APTA: el codigo importa 1 tipo(s) del mapa de simbolos vulnerables y ninguna llamada los resuelve. Las llamadas a esos tipos no estan en la base de datos, asi que cualquier NO-ALCANZABLE seria un falso negativo. Reconstruir compilando el proyecto con sus dependencias."

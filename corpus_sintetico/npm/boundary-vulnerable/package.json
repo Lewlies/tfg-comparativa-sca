@@ -1,0 +1,9 @@
+{
+  "name": "synthetic-npm-boundary-vulnerable",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Caso sintetico TFG: borde de rango de version, lado vulnerable (npm).",
+  "dependencies": {
+    "lodash": "4.17.11"
+  }
+}

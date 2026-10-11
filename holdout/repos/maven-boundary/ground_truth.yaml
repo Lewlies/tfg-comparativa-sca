@@ -1,0 +1,180 @@
+# Ground truth escrito antes de ejecutar sca-gate sobre este repositorio.
+repo: holdout-maven-boundary
+ecosistema: Maven
+conjunto: reserva (hold-out), no usado para disenar sca-gate
+fecha_ground_truth: '2026-10-07'
+fuentes:
+- github/advisory-database (github-reviewed)
+- pypa/advisory-database
+paquetes_resueltos:
+- paquete: com.fasterxml.jackson.core:jackson-annotations
+  version: 2.13.2
+  relacion: transitiva
+- paquete: com.fasterxml.jackson.core:jackson-core
+  version: 2.13.2
+  relacion: transitiva
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  relacion: directa
+- paquete: org.apache.commons:commons-compress
+  version: '1.21'
+  relacion: directa
+diseno:
+  objetivos:
+  - paquete: com.fasterxml.jackson.core:jackson-databind
+    id: CVE-2020-36518
+    dimension: borde, lado vulnerable (2.13.2, corregido en 2.13.2.1)
+  retiradas: []
+  lado_corregido:
+  - paquete: org.apache.commons:commons-compress
+    version: '1.21'
+    ids:
+    - CVE-2021-35515
+    - GHSA-7hfm-57qf-j43q
+    - CVE-2021-35516
+    - GHSA-crv7-7245-f45f
+    - CVE-2021-35517
+    - GHSA-xqfj-vm6h-2x34
+    - CVE-2021-36090
+    - GHSA-mc84-pj99-q6hh
+    dimension: borde, lado corregido (primera version sin los cuatro CVE de 2021)
+presentes:
+- paquete: com.fasterxml.jackson.core:jackson-core
+  version: 2.13.2
+  ids:
+  - CVE-2026-68494
+  - GHSA-r7wm-3cxj-wff9
+  tipo: adicional
+  relacion: transitiva
+- paquete: com.fasterxml.jackson.core:jackson-core
+  version: 2.13.2
+  ids:
+  - CVE-2026-89425
+  - GHSA-7hhh-6rmp-j9qf
+  tipo: adicional
+  relacion: transitiva
+- paquete: com.fasterxml.jackson.core:jackson-core
+  version: 2.13.2
+  ids:
+  - CVE-2025-52999
+  - GHSA-h46c-h94j-95f3
+  tipo: adicional
+  relacion: transitiva
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2026-91776
+  - GHSA-wv8q-qhhj-9h54
+  tipo: adicional
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2026-91777
+  - GHSA-cxp5-3px4-pw24
+  tipo: adicional
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2026-83557
+  - GHSA-gx83-3vf8-gh7j
+  tipo: adicional
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2026-77310
+  - GHSA-vvgp-rfg2-7rr6
+  tipo: adicional
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2026-19032
+  - GHSA-wjgm-6hv5-3cvf
+  tipo: adicional
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2026-54512
+  - GHSA-j3rv-43j4-c7qm
+  tipo: adicional
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2026-50193
+  - GHSA-3wrr-7qpf-2prh
+  tipo: adicional
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2026-54515
+  - GHSA-5jmj-h7xm-6q6v
+  tipo: adicional
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2026-54513
+  - GHSA-rmj7-2vxq-3g9f
+  tipo: adicional
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2026-54514
+  - GHSA-hgj6-7826-r7m5
+  tipo: adicional
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2020-36518
+  - GHSA-57j2-w4cx-62h2
+  tipo: objetivo
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2022-42004
+  - GHSA-rgv9-q543-rqg4
+  tipo: adicional
+  relacion: directa
+- paquete: com.fasterxml.jackson.core:jackson-databind
+  version: 2.13.2
+  ids:
+  - CVE-2022-42003
+  - GHSA-jjjh-jjxp-wpff
+  tipo: adicional
+  relacion: directa
+- paquete: org.apache.commons:commons-compress
+  version: '1.21'
+  ids:
+  - CVE-2024-25710
+  - GHSA-4g9r-vxhx-9pgx
+  tipo: adicional
+  relacion: directa
+- paquete: org.apache.commons:commons-compress
+  version: '1.21'
+  ids:
+  - CVE-2024-26308
+  - GHSA-4265-ccf5-phj5
+  tipo: adicional
+  relacion: directa
+ausentes:
+- paquete: org.apache.commons:commons-compress
+  version: '1.21'
+  ids:
+  - CVE-2021-35515
+  - GHSA-7hfm-57qf-j43q
+  - CVE-2021-35516
+  - GHSA-crv7-7245-f45f
+  - CVE-2021-35517
+  - GHSA-xqfj-vm6h-2x34
+  - CVE-2021-36090
+  - GHSA-mc84-pj99-q6hh
+  motivo: lado corregido del borde

@@ -1,0 +1,17 @@
+repo: synthetic-pypi-control
+ecosistema: PyPI
+dimensiones:
+- control_limpio
+hallazgos_esperados: []
+dependencias:
+- paquete: click
+  version: 8.5.0
+- paquete: python-dateutil
+  version: 2.9.0.post0
+- paquete: typing-extensions
+  version: 4.16.0
+- paquete: six
+  version: 1.17.0
+resultado_esperado_global: CERO_HALLAZGOS
+fecha_verificacion: '2026-09-02'
+fuente_verificacion: pip-audit -r requirements.txt y OSV

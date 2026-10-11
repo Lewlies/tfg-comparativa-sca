@@ -1,0 +1,63 @@
+# Ground truth escrito antes de ejecutar sca-gate sobre este repositorio.
+repo: holdout-npm-boundary
+ecosistema: npm
+conjunto: reserva (hold-out), no usado para disenar sca-gate
+fecha_ground_truth: '2026-10-07'
+fuentes:
+- github/advisory-database (github-reviewed)
+- pypa/advisory-database
+paquetes_resueltos:
+- paquete: lru-cache
+  version: 6.0.0
+  relacion: transitiva
+- paquete: semver
+  version: 7.5.2
+  relacion: directa
+- paquete: ws
+  version: 7.4.5
+  relacion: directa
+- paquete: yallist
+  version: 4.0.0
+  relacion: transitiva
+diseno:
+  objetivos:
+  - paquete: ws
+    id: CVE-2021-32640
+    dimension: borde, lado vulnerable (7.4.5, corregido en 7.4.6)
+  retiradas: []
+  lado_corregido:
+  - paquete: semver
+    version: 7.5.2
+    ids:
+    - CVE-2022-25883
+    - GHSA-c2qf-rxjj-qqgw
+    dimension: borde, lado corregido (primera version sin CVE-2022-25883 en la rama 7.x)
+presentes:
+- paquete: ws
+  version: 7.4.5
+  ids:
+  - CVE-2026-48779
+  - GHSA-96hv-2xvq-fx4p
+  tipo: adicional
+  relacion: directa
+- paquete: ws
+  version: 7.4.5
+  ids:
+  - CVE-2024-37890
+  - GHSA-3h5v-q93c-6h6q
+  tipo: adicional
+  relacion: directa
+- paquete: ws
+  version: 7.4.5
+  ids:
+  - CVE-2021-32640
+  - GHSA-6fc8-4gx4-v693
+  tipo: objetivo
+  relacion: directa
+ausentes:
+- paquete: semver
+  version: 7.5.2
+  ids:
+  - CVE-2022-25883
+  - GHSA-c2qf-rxjj-qqgw
+  motivo: lado corregido del borde

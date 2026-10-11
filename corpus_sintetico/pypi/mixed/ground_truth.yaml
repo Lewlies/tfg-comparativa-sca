@@ -1,0 +1,87 @@
+repo: synthetic-pypi-mixed
+ecosistema: PyPI
+dimensiones:
+- directa
+- transitiva
+- disputada_retirada
+hallazgos_esperados:
+- id_finding: mixed-pypi-01-directa
+  dimension: directa
+  paquete: PyYAML
+  version: 5.3.1
+  ruta_en_arbol: PyYAML (raiz)
+  id_vuln_canonico: CVE-2020-14343
+  aliases:
+  - GHSA-8q59-q68h-6hv4
+  - PYSEC-2021-142
+  rango_afectado: <5.4
+  resultado_esperado: DETECTAR
+- id_finding: mixed-pypi-02-transitiva
+  dimension: transitiva
+  paquete: pyOpenSSL
+  version: 23.2.0
+  ruta_en_arbol: pyOpenSSL (raiz, declarado por nosotros)
+  resultado_esperado: DETECTAR
+  hallazgos_propios_del_paquete:
+  - id_vuln_canonico: CVE-2026-27459
+    aliases:
+    - GHSA-5pwr-322w-8jr4
+    - PYSEC-2026-2269
+  - id_vuln_canonico: CVE-2026-27448
+    aliases:
+    - GHSA-vp96-hxj8-p424
+    - PYSEC-2026-2268
+- id_finding: mixed-pypi-03-transitiva
+  dimension: transitiva
+  paquete: cryptography
+  version: 41.0.7
+  ruta_en_arbol: pyOpenSSL@23.2.0 > cryptography (NO declarado por nosotros)
+  id_vuln_canonico: CVE-2024-26130
+  aliases:
+  - GHSA-6vqw-3v5j-54x4
+  - PYSEC-2024-225
+  rango_afectado: '>=38.0.0, <42.0.4'
+  resultado_esperado: DETECTAR
+  hallazgo_objetivo: true
+  hallazgos_adicionales_reales_no_disenados:
+  - id_vuln_canonico: CVE-2023-50782
+    aliases:
+    - GHSA-3ww4-gg4f-jr7f
+  - id_vuln_canonico: CVE-2024-0727
+    aliases:
+    - GHSA-9v9h-cgj8-h64p
+  - id_vuln_canonico: CVE-2026-26007
+    aliases:
+    - GHSA-r6ph-v2qm-q3c2
+  - id_vuln_canonico: CVE-2026-34073
+    aliases:
+    - GHSA-m959-cc7f-wv43
+  - id_vuln_canonico: CVE-2026-69248
+    aliases:
+    - GHSA-m2h6-j472-rp4c
+  - id_vuln_canonico: CVE-2026-69249
+    aliases:
+    - GHSA-jwv3-5hgf-82ww
+  - id_vuln_canonico: (sin CVE)
+    aliases:
+    - GHSA-h4gh-qq45-vh27
+  - id_vuln_canonico: (sin CVE)
+    aliases:
+    - GHSA-537c-gmf6-5ccf
+- id_finding: mixed-pypi-04-disputada
+  dimension: disputada_retirada
+  paquete: future
+  version: 1.0.0
+  ruta_en_arbol: future (raiz)
+  advisory_retirada: GHSA-xqrq-4mgf-ff32
+  id_vuln_referenciado: CVE-2025-50817
+  motivo_retirada: 'A diferencia del caso axios en synthetic-npm-mixed (retirada por ser DUPLICADO de
+    otra advisory activa), esta fue retirada el 2025-10-06 porque NO es una vulnerabilidad real: describe
+    un comportamiento documentado del sistema de imports de Python (ver PythonCharmers/python-future#650).
+    No existe advisory canonica de reemplazo -- es puro falso positivo de la fuente original, no una cuestion
+    de canonicalizacion de IDs.
+
+    '
+  resultado_esperado: NO_DETECTAR_O_DETECTAR_CON_AVISO_DE_RETIRADA
+fecha_verificacion: '2026-09-02'
+fuente_verificacion: pip-audit -r requirements.txt y OSV

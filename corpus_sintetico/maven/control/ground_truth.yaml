@@ -1,0 +1,17 @@
+repo: synthetic-maven-control
+ecosistema: Maven
+dimensiones:
+- control_limpio
+hallazgos_esperados: []
+dependencias:
+- paquete: org.apache.commons:commons-lang3
+  version: 3.20.0
+- paquete: com.google.code.gson:gson
+  version: 2.14.0
+- paquete: commons-io:commons-io
+  version: 2.22.0
+- paquete: com.google.errorprone:error_prone_annotations
+  version: 2.48.0
+resultado_esperado_global: CERO_HALLAZGOS
+fecha_verificacion: '2026-09-02'
+fuente_verificacion: mvn dependency:tree y OSV

@@ -1,0 +1,11 @@
+{
+  "name": "holdout-npm-mixed",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Repositorio sintetico de reserva (hold-out) del TFG. No contiene codigo.",
+  "dependencies": {
+    "node-fetch": "2.6.0",
+    "request": "2.88.2",
+    "jsonwebtoken": "8.5.1"
+  }
+}

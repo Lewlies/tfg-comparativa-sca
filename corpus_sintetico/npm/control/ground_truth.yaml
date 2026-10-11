@@ -1,0 +1,15 @@
+repo: synthetic-npm-control
+ecosistema: npm
+dimensiones:
+- control_limpio
+hallazgos_esperados: []
+dependencias:
+- paquete: dayjs
+  version: 1.11.21
+- paquete: nanoid
+  version: 6.0.1
+- paquete: zod
+  version: 4.4.3
+resultado_esperado_global: CERO_HALLAZGOS
+fecha_verificacion: '2026-08-16'
+fuente_verificacion: npm audit y OSV
