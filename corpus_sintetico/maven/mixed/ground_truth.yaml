@@ -41,6 +41,7 @@ hallazgos_esperados:
   - GHSA-jfh8-c2jp-5v3q
   rango_afectado: 2.0-beta9 - 2.15.0 (excluye 2.12.2, 2.12.3, 2.3.1)
   resultado_esperado: DETECTAR
+  hallazgo_objetivo: true
 - id_finding: mixed-maven-02-transitiva
   dimension: transitiva
   paquete: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml
@@ -93,6 +94,7 @@ hallazgos_esperados:
     '
   rango_afectado: '>=4.0.0.Beta1, <4.7.8.Final'
   resultado_esperado: DETECTAR_VIA_CANONICA
+  hallazgo_objetivo: true
   subarbol_verificado: 'Confirmado con mvn dependency:tree real (ver arbol_resuelto_real arriba): resteasy-core
     arrastra jboss-logging, tres specs Jakarta/JBoss (annotations, jaxrs, jaxb), resteasy-core-spi, reactive-streams,
     jakarta.activation-api, jakarta.validation-api, asyncutil y smallrye-config (con su propio subarbol:

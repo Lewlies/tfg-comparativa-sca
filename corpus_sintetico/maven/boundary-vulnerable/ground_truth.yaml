@@ -13,5 +13,6 @@ hallazgos_esperados:
   - GHSA-mjmj-j48q-9wg2
   rango_afectado: <2.0
   resultado_esperado: DETECTAR
+  hallazgo_objetivo: true
 fecha_verificacion: '2026-09-02'
 fuente_verificacion: mvn dependency:tree y OSV

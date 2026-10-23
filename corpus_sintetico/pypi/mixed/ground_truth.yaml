@@ -16,6 +16,7 @@ hallazgos_esperados:
   - PYSEC-2021-142
   rango_afectado: <5.4
   resultado_esperado: DETECTAR
+  hallazgo_objetivo: true
 - id_finding: mixed-pypi-02-transitiva
   dimension: transitiva
   paquete: pyOpenSSL
